@@ -6,10 +6,120 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Custom Elements 101</title>
     <link rel="stylesheet" href="./src/index.css" />
-    <script type="module" src="/src/index.ts"></script>
+    <!-- <script type="module" src="/src/index.ts"></script> -->
+    <script type="module" src="./switch.js"></script>
+    <style>
+      flex-box {
+        display: flex;
+        gap: 4px;
+
+        &[gap="sm"] {
+          gap: 8px;
+        }
+
+        &[gap="md"] {
+          gap: 16px;
+        }
+        
+        &[gap="lg"] {
+          gap: 24px;
+        }
+
+        &[direction="column"] {
+          flex-direction: column;
+        }
+
+        &[direction="row-reverse"] {
+          flex-direction: row-reverse;
+        }
+
+        &[direction="column-reverse"] {
+          flex-direction: column-reverse;
+        }
+      }
+
+      my-badge {
+        display: inline-block;
+        padding: 4px 8px;
+        background-color: #eee;
+        border-radius: 4px;
+        font-size: 12px;
+        font-weight: bold;
+        text-transform: uppercase;
+      }
+    </style>
+    <style>
+      my-button {
+        button {
+          background-color: #eee;
+          border: none;
+          padding: 8px 16px;
+          cursor: pointer;
+        }
+      }
+      my-button::part(action) {
+        background-color: brown;
+      }
+    </style>
+    <style>
+      button {
+        background-color: hotpink !important;
+      }
+    </style>
   </head>
   <body>
     <main>
+      <my-switch></my-switch>
+      <flex-box gap="large">
+        <span>Thing 1</span>
+        <span>Thing 2</span>
+        <span>Thing 3</span>
+        <span>Thing 4</span>
+      </flex-box>
+      <my-badge>New Badge</my-badge>
+      <my-button>
+        <button>Click me</button>
+      </my-button>
+      <my-button>
+        <template shadowrootmode="open">
+          <style>
+            button {
+              background-color: blue;
+              color: white;
+              border: none;
+              padding: 4px;
+              cursor: pointer;
+            }
+          </style>
+          <button part="action">
+            <slot name="before">Before</slot>
+            <slot></slot>
+          </button>
+        </template>
+        Click me
+        <span slot="before">Hi</span>
+      </my-button>
+      <my-button>
+        <template shadowrootmode="open">
+          <style>
+            button {
+              background-color: blue;
+              color: white;
+              border: none;
+              padding: 4px;
+              cursor: pointer;
+            }
+          </style>
+          <button part="action">
+            <slot name="before">Before</slot>
+            <slot></slot>
+          </button>
+        </template>
+        Click me
+        <span slot="before">Hi</span>
+      </my-button>
+      <br />
+      <input type="date">
       <p class="eyebrow">Web Components 101</p>
       <h1>A button built as a custom element.</h1>
       <p class="intro">

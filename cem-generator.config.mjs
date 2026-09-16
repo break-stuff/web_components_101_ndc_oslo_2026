@@ -8,7 +8,7 @@ const componentModulePath = (className, tagName) =>
   `web_components_101_ndc_oslo_2026/components/${tagName.replace('my-', '')}`
 
 export default {
-  include: ['src/**/*.{ts,tsx,js,jsx}', 'src/**/*.css'],
+  include: ['src/**/*.{ts,tsx,js,jsx}', 'src/**/*.css', './switch.js'],
   exclude: ['**/*.test.*', '**/*.spec.*', '**/*.stories.*', '**/dist/**', '**/node_modules/**'],
   plugins: [
     litPlugin(),

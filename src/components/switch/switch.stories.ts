@@ -11,10 +11,29 @@ const meta = {
   tags: ['autodocs'],
   args,
   argTypes,
-  render: (storyArgs) => template(storyArgs, html`My switch placeholder`),
+  render: (storyArgs) => template(storyArgs, html`Enable notifications`),
 } satisfies Meta<MySwitch>
 
 export default meta
 type Story = StoryObj
 
-export const Placeholder: Story = {}
+export const Default: Story = {}
+
+export const Checked: Story = {
+  args: {
+    checked: true,
+  },
+}
+
+export const Disabled: Story = {
+  args: {
+    disabled: true,
+  },
+}
+
+export const CheckedAndDisabled: Story = {
+  args: {
+    checked: true,
+    disabled: true,
+  },
+}
