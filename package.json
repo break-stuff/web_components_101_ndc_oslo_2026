@@ -1,0 +1,49 @@
+{
+  "name": "web_components_101_ndc_oslo_2026",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "cem": "cem generate",
+    "lint": "oxlint src",
+    "lint:fix": "oxlint src --fix",
+    "format": "oxfmt src vite.config.ts vitest.config.ts cem-generator.config.mjs",
+    "format:check": "oxfmt --check src vite.config.ts vitest.config.ts cem-generator.config.mjs",
+    "preview": "vite preview",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
+  },
+  "dependencies": {
+    "lit": "^3.3.3"
+  },
+  "devDependencies": {
+    "@storybook/addon-a11y": "^10.6.0",
+    "@storybook/addon-docs": "^10.6.0",
+    "@storybook/addon-vitest": "^10.6.0",
+    "@storybook/web-components-vite": "^10.6.0",
+    "@types/node": "^26.5.1",
+    "@vitest/browser-playwright": "latest",
+    "@vitest/coverage-v8": "latest",
+    "@wc-toolkit/cem-generator-bundler": "^0.1.6",
+    "@wc-toolkit/cem-generator-cli": "^0.1.7",
+    "@wc-toolkit/cem-generator-lit": "^0.1.7",
+    "@wc-toolkit/jsx-types": "^1.8.2",
+    "@wc-toolkit/react-wrappers": "^1.2.11",
+    "@wc-toolkit/storybook-helpers": "^10.7.7",
+    "@wc-toolkit/svelte-types": "^1.0.3",
+    "@wc-toolkit/vuejs-types": "^1.0.3",
+    "oxfmt": "^0.68.0",
+    "oxlint": "^1.83.0",
+    "playwright": "latest",
+    "prettier": "^3.9.6",
+    "storybook": "^10.6.0",
+    "typescript": "~6.0.2",
+    "vite": "^8.3.0",
+    "vitest": "latest",
+    "vitest-browser-lit": "^1.0.1"
+  }
+}

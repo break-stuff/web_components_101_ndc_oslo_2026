@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Custom Elements 101</title>
+    <link rel="stylesheet" href="./src/index.css" />
+    <script type="module" src="/src/components/button/button.ts"></script>
+    <script type="module" src="/src/components/switch/switch.ts"></script>
+  </head>
+  <body>
+    <main>
+      <p class="eyebrow">Web Components 101</p>
+      <h1>A button built as a custom element.</h1>
+      <p class="intro">
+        This button is defined in <code>src/components/button/button.ts</code>
+        and used below like any other HTML element.
+      </p>
+      <my-button>Try the button</my-button>
+      <pre><code>&lt;my-button&gt;Try the button&lt;/my-button&gt;</code></pre>
+    </main>
+  </body>
+</html>
