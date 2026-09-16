@@ -1,23 +1,53 @@
 {
   "name": "web_components_101_ndc_oslo_2026",
-  "private": true,
   "version": "0.0.0",
   "type": "module",
+  "files": [
+    "dist",
+    "custom-elements.json",
+    "react",
+    "types"
+  ],
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "exports": {
+    ".": {
+      "types": "./dist/types/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./components/*": {
+      "types": "./dist/types/components/*/*.d.ts",
+      "import": "./dist/components/*/*.js",
+      "require": "./dist/components/*/*.cjs"
+    },
+    "./react": {
+      "types": "./react/index.d.ts",
+      "import": "./react/index.js"
+    },
+    "./react/*": {
+      "types": "./react/*.d.ts",
+      "import": "./react/*.js"
+    },
+    "./types": "./types/index.d.ts",
+    "./types/*": "./types/*",
+    "./custom-elements.json": "./custom-elements.json"
+  },
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build",
+    "build": "tsc && vite build && tsc -p tsconfig.build.json && cem generate",
     "cem": "cem generate",
     "lint": "oxlint src",
     "lint:fix": "oxlint src --fix",
-    "format": "oxfmt src vite.config.ts vitest.config.ts cem-generator.config.mjs",
-    "format:check": "oxfmt --check src vite.config.ts vitest.config.ts cem-generator.config.mjs",
+    "format": "oxfmt src vite.config.ts vitest.config.ts tsconfig.build.json cem-generator.config.mjs",
+    "format:check": "oxfmt --check src vite.config.ts vitest.config.ts tsconfig.build.json cem-generator.config.mjs",
     "preview": "vite preview",
     "test": "vitest run",
     "test:watch": "vitest",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
   },
-  "dependencies": {
+  "peerDependencies": {
     "lit": "^3.3.3"
   },
   "devDependencies": {
@@ -36,6 +66,7 @@
     "@wc-toolkit/storybook-helpers": "^10.7.7",
     "@wc-toolkit/svelte-types": "^1.0.3",
     "@wc-toolkit/vuejs-types": "^1.0.3",
+    "lit": "^3.3.3",
     "oxfmt": "^0.68.0",
     "oxlint": "^1.83.0",
     "playwright": "latest",
